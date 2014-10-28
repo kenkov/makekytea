@@ -7,7 +7,7 @@ KYTEA = ~/kytea/bin/kytea
 .PHONY: main prepare validate train edit save clean
 
 main:
-	@echo "How to use"
+	@echo "Usage"
 	@echo "    prepare: prepare files and directories for training"
 	@echo "    train: execute makemode.sh"
 	@echo "    edit: edit the latest work/*.annot file"
@@ -40,7 +40,4 @@ test:
 	for file in work/*.mod; do :; done && ${KYTEA} -model $$file
 
 clean:
-	#if [ -e save/000.mod ]; then for file in save/*.wann; do :; done && cp $$file src/annot.txt; fi
-	#if [ -e work/000.mod ]; then for file in work/*.mod; do :; done && cp $$file src/kytea.mod; fi
-	#cp src/{${RAW_FILE},${FEAT_FILE}} work
 	rm -rf work save data
